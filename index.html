@@ -2,10 +2,89 @@
 <html>
   <head>
     <title>Suds and Shine</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 100vh;
+      }
+
+      .left, .right {
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .left {
+        flex: 1;
+        background-color: #f0f8ff;
+      }
+
+      .right {
+        flex: 1;
+        background-color: #fff8e1;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
   </head>
   <body>
-    <img src="logo.png" alt="Suds and Shine Logo" width="200">
-    <h1>Welcome to Suds and Shine</h1>
-    <p>Detailing done right — one car at a time.</p>
+    <div class="container">
+      <!-- Left Side: Logo + Story -->
+      <div class="left">
+        <img src="logo.png" alt="Suds and Shine Logo">
+        <h1>Our Story</h1>
+        <p>At Suds and Shine, we started from the driveway with a bucket, a hose, and a passion for making cars gleam. Whether it's a quick wash or a full detail, we believe every ride deserves to shine.</p>
+      </div>
+
+      <!-- Right Side: Products -->
+      <div class="right">
+        <h2>Featured Detailing Products</h2>
+        <ul>
+          <li><strong>Super Shine Spray Wax</strong> – Leaves a mirror finish</li>
+          <li><strong>Interior Clean Mist</strong> – Fresh smell + clean look</li>
+          <li><strong>Tire Gloss Gel</strong> – Deep black shine, no sling</li>
+          <li><strong>Foam Blaster Soap</strong> – Safe for all paint types</li>
+          <li><strong>Microfiber Kit</strong> – Scratch-free towels</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer with Contact Info -->
+    <footer>
+      Contact my supplier: <br>
+      <strong>Detail Kings</strong> <br>
+      📞 555-123-4567 <br>
+      📧 info@detailkings.com
+    </footer>
   </body>
 </html>
