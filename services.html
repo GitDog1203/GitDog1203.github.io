@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Services – Suds and Shine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .service-list {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #004d99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Select Your Services</h1>
+
+  <div class="service-list">
+    <form id="servicesForm">
+      <!-- Basic Services -->
+      <label><span>Basic Interior – $35</span><input type="checkbox" value="35"></label>
+      <label><span>Basic Exterior – $35</span><input type="checkbox" value="35"></label>
+      <label><span>Basic Combo – $60</span><input type="checkbox" value="60"></label>
+
+      <!-- Premium Services -->
+      <label><span>Premium Interior – $45</span><input type="checkbox" value="45"></label>
+      <label><span>Premium Exterior – $45</span><input type="checkbox" value="45"></label>
+      <label><span>Premium Combo – $75</span><input type="checkbox" value="75"></label>
+
+      <!-- Ceramic Coatings -->
+      <label><span>Wheels Coating – $110</span><input type="checkbox" value="110"></label>
+      <label><span>Trim Coating – $35</span><input type="checkbox" value="35"></label>
+      <label><span>Glass Coating – $120</span><input type="checkbox" value="120"></label>
+      <label><span>Paint Protection – $20</span><input type="checkbox" value="20"></label>
+      <label><span>Leather Protection – $55</span><input type="checkbox" value="55"></label>
+
+      <!-- Paint Correction -->
+      <label><span>One-Step Paint Correction – $100</span><input type="checkbox" value="100"></label>
+    </form>
+
+    <div class="total">
+      Total: $<span id="totalAmount">0</span>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('servicesForm');
+    const totalDisplay = document.getElementById('totalAmount');
+
+    form.addEventListener('change', () => {
+      let total = 0;
+      const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+      checkboxes.forEach(cb => {
+        total += parseFloat(cb.value);
+      });
+      totalDisplay.textContent = total.toFixed(2);
+    });
+  </script>
+</body>
+</html>
+
