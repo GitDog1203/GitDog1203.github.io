@@ -8,191 +8,36 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       margin: 0;
-      background-color: #f9f9f9;
+      background-color: #f0f8ff;
     }
+
     h1 {
       text-align: center;
+      margin-bottom: 20px;
     }
+
     .service-list {
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
       background: white;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     fieldset {
       border: 1px solid #ccc;
-      margin-bottom: 20px;
-      padding: 10px 15px;
       border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 15px;
     }
+
     legend {
       font-weight: bold;
-      padding: 0 5px;
+      padding: 0 10px;
     }
+
     label {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-      cursor: pointer;
-    }
-    label:last-child {
-      border-bottom: none;
-    }
-    input[type="checkbox"], input[type="radio"] {
-      transform: scale(1.2);
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    .total {
-      text-align: right;
-      font-size: 1.3em;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-    .back-link {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .back-link a {
-      color: #004d99;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .back-link a:hover {
-      text-decoration: underline;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 1.1em;
-      background-color: #004d99;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      width: 100%;
-    }
-    button:hover {
-      background-color: #003366;
-    }
-  </style>
-</head>
-<body>
-  <h1>Price Calculator</h1>
-
-  <div class="service-list">
-    <form id="servicesForm" onsubmit="return false;">
-      <fieldset>
-        <legend>Basic Packages (Select One)</legend>
-        <label>Basic Interior – $35
-          <input type="radio" name="basicPackage" value="35">
-        </label>
-        <label>Basic Exterior – $35
-          <input type="radio" name="basicPackage" value="35">
-        </label>
-        <label>Basic Combo – $60
-          <input type="radio" name="basicPackage" value="60">
-        </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Premium Packages (Select One)</legend>
-        <label>Premium Interior – $45
-          <input type="radio" name="premiumPackage" value="45">
-        </label>
-        <label>Premium Exterior – $45
-          <input type="radio" name="premiumPackage" value="45">
-        </label>
-        <label>Premium Combo – $75
-          <input type="radio" name="premiumPackage" value="75">
-        </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Ceramic Protection Coatings (Select any)</legend>
-        <label>Wheels Coating – $110
-          <input type="checkbox" value="110" name="addOns">
-        </label>
-        <label>Trim Coating – $35
-          <input type="checkbox" value="35" name="addOns">
-        </label>
-        <label>Glass Coating – $120
-          <input type="checkbox" value="120" name="addOns">
-        </label>
-        <label>2–3 Month Paint Protection – $20
-          <input type="checkbox" value="20" name="addOns">
-        </label>
-        <label>Leather Protection – $55
-          <input type="checkbox" value="55" name="addOns">
-        </label>
-      </fieldset>
-
-      <fieldset>
-        <legend>Paint Correction (Select any)</legend>
-        <label>One-Step Paint Correction – $365
-          <input type="checkbox" value="365" name="addOns">
-        </label>
-      </fieldset>
-    </form>
-
-    <div class="total">
-      Total: $<span id="totalAmount">0.00</span>
-    </div>
-
-    <button onclick="goToContact()">Proceed to Contact Us</button>
-  </div>
-
-  <div class="back-link">
-    <a href="index.html">← Back to Home</a>
-  </div>
-
-  <script>
-    const form = document.getElementById('servicesForm');
-    const totalDisplay = document.getElementById('totalAmount');
-
-    form.addEventListener('change', () => {
-      let total = 0;
-
-      // Basic Package (radio group)
-      const basic = form.querySelector('input[name="basicPackage"]:checked');
-      if (basic) {
-        total += parseFloat(basic.value);
-      }
-
-      // Premium Package (radio group)
-      const premium = form.querySelector('input[name="premiumPackage"]:checked');
-      if (premium) {
-        total += parseFloat(premium.value);
-      }
-
-      // Add-ons (checkboxes)
-      const addOns = form.querySelectorAll('input[name="addOns"]:checked');
-      addOns.forEach(box => {
-        total += parseFloat(box.value);
-      });
-
-      totalDisplay.textContent = total.toFixed(2);
-    });
-
-    function goToContact() {
-      // Calculate total again to be sure
-      let total = 0;
-
-      const basic = form.querySelector('input[name="basicPackage"]:checked');
-      if (basic) total += parseFloat(basic.value);
-
-      const premium = form.querySelector('input[name="premiumPackage"]:checked');
-      if (premium) total += parseFloat(premium.value);
-
-      const addOns = form.querySelectorAll('input[name="addOns"]:checked');
-      addOns.forEach(box => total += parseFloat(box.value));
-
-      // Redirect to contact.html with total as a URL param
-      window.location.href = 'contact.html?total=' + total.toFixed(2);
-    }
-  </script>
-</body>
-</html>
+      align-items: center;
