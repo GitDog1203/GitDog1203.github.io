@@ -1,2 +1,2 @@
 # GitDog1203.github.io
-Website for Friends car detailing 
+A car detailing i made for my friend who has a detailing buisness
