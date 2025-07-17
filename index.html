@@ -1,171 +1,174 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Suds and Shine</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <title>Suds and Shine</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-      /* Navigation Bar Styles */
-      nav {
-        background-color: #004d99;
-        color: white;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    /* Navigation Bar Styles */
+    nav {
+      background-color: #004d99;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      nav h1 {
-        margin: 0;
-        font-size: 24px;
-      }
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+    }
 
-      .nav-links {
-        display: flex;
-        gap: 15px;
-      }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
 
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
 
-      .nav-links a:hover {
-        color: #ffcc00;
-      }
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
 
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 100vh;
-      }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
 
-      .left, .right {
-        padding: 20px;
-        box-sizing: border-box;
-      }
+    .left, .right {
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-      .left {
-        flex: 1;
-        background-color: #f0f8ff;
-      }
+    .left {
+      flex: 1;
+      background-color: #f0f8ff;
+    }
 
-      .right {
-        flex: 1;
-        background-color: #fff8e1;
-      }
+    .right {
+      flex: 1;
+      background-color: #fff8e1;
+    }
 
-      img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-      }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
 
-      h2, h3 {
-        margin-top: 0;
-      }
+    h2, h3 {
+      margin-top: 0;
+    }
 
-      footer {
-        background-color: #333;
-        color: white;
-        padding: 15px;
-        text-align: center;
-      }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
 
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
 
-      li {
-        margin-bottom: 10px;
-      }
+    li {
+      margin-bottom: 10px;
+    }
 
-      .section {
-        margin-bottom: 30px;
-      }
-    </style>
-  </head>
-  <body>
+    .section {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
 
-    <!-- Navigation Bar -->
-    <nav>
-      <h1>Suds and Shine</h1>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="services.html">Price Calculator</a>
-        <a href="#contact">Contact</a>
+  <!-- Navigation Bar -->
+  <nav>
+    <h1>Suds and Shine</h1>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="services.html">Price Calculator</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="container" id="home">
+    <!-- Left Side: Logo + Story -->
+    <div class="left">
+      <img src="logo.png" alt="Suds and Shine Logo">
+      <h2>Our Story</h2>
+      <p>At Suds and Shine, we started from the driveway with a bucket, a hose, and a passion for making cars gleam. Whether it's a quick wash or a full detail, we believe every ride deserves to shine.</p>
+    </div>
+
+    <!-- Right Side: Featured Services with Icons -->
+    <div class="right" id="services">
+      <h2>🚗 Featured Detailing Services</h2>
+
+      <div class="section">
+        <h3>🎉 First-Time Offer</h3>
+        <ul>
+          <li>🎁 5% Off your first appointment!</li>
+        </ul>
       </div>
-    </nav>
 
-    <!-- Content Section -->
-    <div class="container" id="home">
-      <!-- Left Side: Logo + Story -->
-      <div class="left">
-        <img src="logo.png" alt="Suds and Shine Logo">
-        <h2>Our Story</h2>
-        <p>At Suds and Shine, we started from the driveway with a bucket, a hose, and a passion for making cars gleam. Whether it's a quick wash or a full detail, we believe every ride deserves to shine.</p>
+      <div class="section">
+        <h3>🧼 Basic Packages</h3>
+        <ul>
+          <li>🪑 Basic Interior: Vacuum and wipe down of all surfaces</li>
+          <li>🚿 Basic Exterior: Wheels, windows, and paint wash</li>
+          <li>🔄 Basic Combo: Interior + Exterior cleaning</li>
+        </ul>
       </div>
 
-      <!-- Right Side: Featured Services with Icons -->
-      <div class="right" id="services">
-        <h2>🚗 Featured Detailing Services</h2>
-        <div class="section">
-          <h3>🎉 First-Time Offer</h3>
-          <ul>
-            <li>🎁 5% Off your first appointment!</li>
-          </ul>
-        </div>
+      <div class="section">
+        <h3>💎 Premium Packages</h3>
+        <ul>
+          <li>🧴 Premium Interior: Basic interior + ceramic carpet protection</li>
+          <li>🧽 Premium Exterior: Basic exterior + decontamination & wax</li>
+          <li>💼 Premium Combo: Premium interior + exterior detailing</li>
+        </ul>
+      </div>
 
-  <div class="section">
-    <h3>🧼 Basic Packages</h3>
-    <ul>
-      <li>🪑 Basic Interior: Vacuum and wipe down of all surfaces</li>
-      <li>🚿 Basic Exterior: Wheels, windows, and paint wash</li>
-      <li>🔄 Basic Combo: Interior + Exterior cleaning</li>
-    </ul>
+      <div class="section">
+        <h3>🛡️ Ceramic Protection Coatings</h3>
+        <ul>
+          <li>🛞 Wheels Coating</li>
+          <li>🧵 Trim Coating</li>
+          <li>🪟 Glass Coating</li>
+          <li>🎨 2–3 Month Paint Protection</li>
+          <li>🛋️ Leather Protection</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>🔧 Paint Correction</h3>
+        <ul>
+          <li>🌀 One-Step Paint Correction</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
-  <div class="section">
-    <h3>💎 Premium Packages</h3>
-    <ul>
-      <li>🧴 Premium Interior: Basic interior + ceramic carpet protection</li>
-      <li>🧽 Premium Exterior: Basic exterior + decontamination & wax</li>
-      <li>💼 Premium Combo: Premium interior + exterior detailing</li>
-    </ul>
-  </div>
+  <!-- Footer with Contact Info -->
+  <footer id="contact">
+    Contact my supplier: <br>
+    <strong>Suds and Shine</strong> <br>
+    📞 (912)-661-9494 <br>
+    📧 Corbintaylor0116@gmail.com
+  </footer>
 
-  <div class="section">
-    <h3>🛡️ Ceramic Protection Coatings</h3>
-    <ul>
-      <li>🛞 Wheels Coating</li>
-      <li>🧵 Trim Coating</li>
-      <li>🪟 Glass Coating</li>
-      <li>🎨 2–3 Month Paint Protection</li>
-      <li>🛋️ Leather Protection</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h3>🔧 Paint Correction</h3>
-    <ul>
-      <li>🌀 One-Step Paint Correction</li>
-    </ul>
-  </div>
-</div>
-
-    <!-- Footer with Contact Info -->
-    <footer id="contact">
-      Contact my supplier: <br>
-      <strong>Suds and Shine</strong> <br>
-      📞 (912)-661-9494 <br>
-      📧 Corbintaylor0116@gmail.com
-    </footer>
-  </body>
+</body>
 </html>
