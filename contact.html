@@ -1,68 +1,199 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Us – Suds and Shine</title>
+  <title>Suds and Shine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
-      padding: 20px;
       margin: 0;
-      background-color: #f9f9f9;
+      padding: 0;
     }
 
-    header {
+    /* Navigation Bar Styles */
+    nav {
       background-color: #004d99;
       color: white;
       padding: 15px 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    main {
-      max-width: 600px;
-      margin: 30px auto;
-      background: white;
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffcc00;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 100vh;
+    }
+
+    .left, .right {
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
 
-    h1 {
+    .left {
+      flex: 1;
+      background-color: #f0f8ff;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #fff8e1;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h2, h3 {
       margin-top: 0;
     }
 
-    p {
-      line-height: 1.6;
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
     }
 
-    a.back-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #004d99;
-      text-decoration: none;
-      font-weight: bold;
+    ul {
+      list-style-type: none;
+      padding-left: 0;
     }
 
-    a.back-link:hover {
-      text-decoration: underline;
+    li {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        flex: none;
+        width: 100%;
+        padding: 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Contact Suds and Shine</h1>
-  </header>
+  <!-- Navigation Bar -->
+  <nav>
+    <h1>Suds and Shine</h1>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="services.html">Price Calculator</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
 
-  <main>
-    <p><strong>Phone:</strong> (912)-661-9494</p>
-    <p><strong>Email:</strong> Corbintaylor0116@gmail.com</p>
-    <p><strong>Address:</strong> (Add your physical address or service area here)</p>
+  <!-- Main Content Area -->
+  <div class="container" id="home">
+    <!-- Left Side: Logo + Story -->
+    <div class="left">
+      <img src="logo.png" alt="Suds and Shine Logo">
+      <h2>Our Story</h2>
+      <p>At Suds and Shine, we started from the driveway with a bucket, a hose, and a passion for making cars gleam. Whether it's a quick wash or a full detail, we believe every ride deserves to shine.</p>
+    </div>
 
-    <!-- Optional: Add a contact form here later -->
+    <!-- Right Side: Featured Services with Prices -->
+    <div class="right" id="services">
+      <h2>🚗 Featured Detailing Services</h2>
 
-    <a href="index.html" class="back-link">← Back to Home</a>
-  </main>
+      <div class="section">
+        <h3>🎉 First-Time Offer</h3>
+        <ul>
+          <li>5% Off your first appointment!</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>🧼 Basic Packages</h3>
+        <ul>
+          <li>Basic Interior: Vacuum and wipe down of all surfaces — <strong>$35</strong></li>
+          <li>Basic Exterior: Wheels, windows, and paint wash — <strong>$35</strong></li>
+          <li>Basic Combo: Interior + Exterior cleaning — <strong>$60</strong></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>💎 Premium Packages</h3>
+        <ul>
+          <li>Premium Interior: Basic interior + ceramic carpet protection — <strong>$45</strong></li>
+          <li>Premium Exterior: Basic exterior + decontamination & wax — <strong>$45</strong></li>
+          <li>Premium Combo: Premium interior + exterior detailing — <strong>$75</strong></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>🛡️ Ceramic Protection Coatings</h3>
+        <ul>
+          <li>Wheels Coating — <strong>$110</strong></li>
+          <li>Trim Coating — <strong>$35</strong></li>
+          <li>Glass Coating — <strong>$120</strong></li>
+          <li>2–3 Month Paint Protection — <strong>$20</strong></li>
+          <li>Leather Protection — <strong>$55</strong></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>🔧 Paint Correction</h3>
+        <ul>
+          <li>One-Step Paint Correction — <strong>$365</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with Contact Info -->
+  <footer id="contact">
+    Contact my supplier: <br>
+    <strong>Suds and Shine</strong> <br>
+    📞 (912)-661-9494 <br>
+    📧 Corbintaylor0116@gmail.com
+  </footer>
 
 </body>
 </html>
