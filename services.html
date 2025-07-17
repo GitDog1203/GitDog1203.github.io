@@ -41,3 +41,162 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin: 8px 0;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      transform: scale(1.2);
+      margin-left: 10px;
+    }
+
+    .total {
+      font-size: 1.4em;
+      text-align: right;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 15px;
+      font-size: 1.2em;
+      background-color: #004d99;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #004d99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Price Calculator</h1>
+
+  <div class="service-list">
+    <form id="servicesForm" onsubmit="return false;">
+      <fieldset>
+        <legend>Basic Packages (Select One)</legend>
+        <label>Basic Interior – $35
+          <input type="radio" name="basicPackage" value="35">
+        </label>
+        <label>Basic Exterior – $35
+          <input type="radio" name="basicPackage" value="35">
+        </label>
+        <label>Basic Combo – $60
+          <input type="radio" name="basicPackage" value="60">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Premium Packages (Select One)</legend>
+        <label>Premium Interior – $45
+          <input type="radio" name="premiumPackage" value="45">
+        </label>
+        <label>Premium Exterior – $45
+          <input type="radio" name="premiumPackage" value="45">
+        </label>
+        <label>Premium Combo – $75
+          <input type="radio" name="premiumPackage" value="75">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Ceramic Protection Coatings</legend>
+        <label>Wheels Coating – $110
+          <input type="checkbox" value="110" name="addOns">
+        </label>
+        <label>Trim Coating – $35
+          <input type="checkbox" value="35" name="addOns">
+        </label>
+        <label>Glass Coating – $120
+          <input type="checkbox" value="120" name="addOns">
+        </label>
+        <label>2–3 Month Paint Protection – $20
+          <input type="checkbox" value="20" name="addOns">
+        </label>
+        <label>Leather Protection – $55
+          <input type="checkbox" value="55" name="addOns">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Paint Correction</legend>
+        <label>One-Step Paint Correction – $365
+          <input type="checkbox" value="365" name="addOns">
+        </label>
+      </fieldset>
+    </form>
+
+    <div class="total">
+      Total: $<span id="totalAmount">0.00</span>
+    </div>
+
+    <button onclick="goToContact()">Proceed to Contact Us</button>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('servicesForm');
+    const totalDisplay = document.getElementById('totalAmount');
+
+    function calculateTotal() {
+      let total = 0;
+
+      const basic = form.querySelector('input[name="basicPackage"]:checked');
+      if (basic) total += parseFloat(basic.value);
+
+      const premium = form.querySelector('input[name="premiumPackage"]:checked');
+      if (premium) total += parseFloat(premium.value);
+
+      const addOns = form.querySelectorAll('input[name="addOns"]:checked');
+      addOns.forEach(item => total += parseFloat(item.value));
+
+      totalDisplay.textContent = total.toFixed(2);
+    }
+
+    form.addEventListener('change', calculateTotal);
+
+    function goToContact() {
+      let total = 0;
+
+      const basic = form.querySelector('input[name="basicPackage"]:checked');
+      if (basic) total += parseFloat(basic.value);
+
+      const premium = form.querySelector('input[name="premiumPackage"]:checked');
+      if (premium) total += parseFloat(premium.value);
+
+      const addOns = form.querySelectorAll('input[name="addOns"]:checked');
+      addOns.forEach(item => total += parseFloat(item.value));
+
+      const url = `contact.html?total=${total.toFixed(2)}`;
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
