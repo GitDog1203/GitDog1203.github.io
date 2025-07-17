@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Price Calculator – Suds and Shine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,11 +10,9 @@
       margin: 0;
       background-color: #f9f9f9;
     }
-
     h1 {
       text-align: center;
     }
-
     .service-list {
       max-width: 500px;
       margin: auto;
@@ -22,19 +21,16 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     fieldset {
       border: 1px solid #ccc;
       margin-bottom: 20px;
       padding: 10px 15px;
       border-radius: 8px;
     }
-
     legend {
       font-weight: bold;
       padding: 0 5px;
     }
-
     label {
       display: flex;
       justify-content: space-between;
@@ -42,37 +38,45 @@
       border-bottom: 1px solid #eee;
       cursor: pointer;
     }
-
     label:last-child {
       border-bottom: none;
     }
-
     input[type="checkbox"], input[type="radio"] {
       transform: scale(1.2);
       margin-left: 10px;
       cursor: pointer;
     }
-
     .total {
       text-align: right;
       font-size: 1.3em;
       margin-top: 20px;
       font-weight: bold;
     }
-
     .back-link {
       text-align: center;
       margin-top: 20px;
     }
-
     .back-link a {
       color: #004d99;
       text-decoration: none;
       font-weight: bold;
     }
-
     .back-link a:hover {
       text-decoration: underline;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      background-color: #004d99;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #003366;
     }
   </style>
 </head>
@@ -80,8 +84,7 @@
   <h1>Price Calculator</h1>
 
   <div class="service-list">
-    <form id="servicesForm">
-
+    <form id="servicesForm" onsubmit="return false;">
       <fieldset>
         <legend>Basic Packages (Select One)</legend>
         <label>Basic Interior – $35
@@ -133,12 +136,13 @@
           <input type="checkbox" value="365" name="addOns">
         </label>
       </fieldset>
-
     </form>
 
     <div class="total">
       Total: $<span id="totalAmount">0.00</span>
     </div>
+
+    <button onclick="goToContact()">Proceed to Contact Us</button>
   </div>
 
   <div class="back-link">
@@ -172,6 +176,23 @@
 
       totalDisplay.textContent = total.toFixed(2);
     });
+
+    function goToContact() {
+      // Calculate total again to be sure
+      let total = 0;
+
+      const basic = form.querySelector('input[name="basicPackage"]:checked');
+      if (basic) total += parseFloat(basic.value);
+
+      const premium = form.querySelector('input[name="premiumPackage"]:checked');
+      if (premium) total += parseFloat(premium.value);
+
+      const addOns = form.querySelectorAll('input[name="addOns"]:checked');
+      addOns.forEach(box => total += parseFloat(box.value));
+
+      // Redirect to contact.html with total as a URL param
+      window.location.href = 'contact.html?total=' + total.toFixed(2);
+    }
   </script>
 </body>
 </html>
